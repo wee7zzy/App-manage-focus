@@ -26,14 +26,7 @@
                     <span class="text-sm font-medium">Tasks</span>
                 </a>
             </li>
-            <li>
-                <a href="#"
-                    class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-black hover:text-gray-800">
-                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-white-400"><i
-                            class="bx bx-rotate-right"></i></span>
-                    <span class="text-sm font-medium">Relaod</span>
-                </a>
-            </li>
+        
             <li>
                 <a href="#"
                     class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-black hover:text-gray-800">
@@ -42,14 +35,7 @@
                     <span class="text-sm font-medium">Completed</span>
                 </a>
             </li>
-            <li>
-                <a href="#"
-                    class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-black hover:text-gray-800">
-                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-white-400"><i
-                            class="bx bx-music"></i></span>
-                    <span class="text-sm font-medium">Music</span>
-                </a>
-            </li>
+            
             <li>
                 <a href="#"
                     class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-black hover:text-gray-800">
@@ -61,19 +47,85 @@
             <li>
                 <a href="#"
                     class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-black hover:text-gray-800">
-                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-white-400"><i
-                            class="bx bx-user"></i></span>
+                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-white-400">
+                        <i class="bx bx-user"></i></span>
                     <span class="text-sm font-medium">Profile</span>
                 </a>
             </li>
         </ul>
     </div>
 
-    <main class="bg-blue-500">
-
-        <h1>hello</h1>
-
+    <main class="bg-white/80 width w-[1000px] mt-4 mb-4 rounded-r-2xl">
+        <!-- Pomodoro Timer -->
+    <section class="bg-white rounded-r-2xl shadow p-6 mb-8">
+        <div class="text-center">
+            <h2 class="text-2xl font-bold mb-4">Timer</h2>
+            <div class="text-6xl font-mono mb-4">25:00</div>
+            <div class="flex justify-center gap-4">
+                <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Start</button>
+                <button class="px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500">Pause</button>
+            </div>
+        </div>
+    </section> 
+    <!-- Task List -->
+    <section class="bg-white rounded-r-2xl shadow p-6">
+        <div class="flex items-center justify-between mb-4">
+            
+            <button id="btntask" class=" text-black px-4 py-2 bg-yellow-400  rounded-lg hover:bg-yellow-200 hover:text-grey font-bold" >+ Ajouter Tache</button>
+            
+        </div>
+        <div class="space-y-4"> 
+            <!-- Task Item -->
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg shadow">
+                <div>
+                    <h3 class="font-bold">Task name</h3>
+                    <span class="text-sm text-gray-500">Statut : to do</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600"><i class='bx bxs-edit-alt'></i></button>
+                    <button class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"><i class='bx bxs-trash-alt' ></i></button>
+                </div>
+            </div>
+            <!-- Another Task Item -->
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg shadow">
+                <div>
+                    <h3 class="font-bold">Task name</h3>
+                    <span class="text-sm text-gray-500">Statut : to do</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600"><i class='bx bxs-edit-alt'></i></button>
+                    <button class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"><i class='bx bxs-trash-alt' ></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
     </main>
-    
+
+    <!-- modal code -->
+  <div  style="background-image: url(image/pexels-neosiam-676578.jpg);" class="model absolute  w-full h-full justify-center items-center hidden">
+
+    <div class=" bg-white/50 p-4 w-[1000px] h-[500px] justify-center items-center rounded-lg shadow-lg">
+       <div class="flex justify-between">
+           <h2 class="text-2xl font-bold">Add tasks : </h2>
+            <i id="close" class="bx bx-x "></i>
+       </div>
+       <div class="flex">
+        <input type="text" placeholder="task name" class="name border border-gray-300 rounded-lg px-3 py-2 my-2 h-10">
+        <textarea type="text" placeholder="task description" class="description border border-gray-300 rounded-lg px-2 pr-[100px] pb-[100px] py-2  mx-10 my-2"></textarea>
+       </div>
+
+       
+       <div class="">
+           <select name="status" id="status"  class=" statut border border-gray-300 rounded-lg px-3 py-2">
+               <option value="to do">heigh</option>
+               <option value="in progress">moyenne</option>
+               <option value="done">low</option>
+           </select>
+           <button class="btn-click bg-blue-700 px-3 py-2 rounded-lg text-white hover:bg-blue-600 hover:text-gray-800" >click</button>
+       </div>
+
+     </div>
+   </div>
+    <script src="app.js"></script>
 </body>
 </html>
